@@ -23,15 +23,13 @@ mod tests {
 
     #[test]
     fn example_answer() {
-        let mut elves: Vec<Vec<i32>> = vec![];
-        #[allow(clippy::vec_init_then_push)]
-        {
-            elves.push(vec![1000, 2000, 3000]);
-            elves.push(vec![4000]);
-            elves.push(vec![5000, 6000]);
-            elves.push(vec![7000, 8000, 9000]);
-            elves.push(vec![10000]);
-        }
+        let elves: Vec<Vec<i32>> = vec![
+            vec![1000, 2000, 3000],
+            vec![4000],
+            vec![5000, 6000],
+            vec![7000, 8000, 9000],
+            vec![10000],
+        ];
         assert_eq!(aoc1_1(elves), 24000);
     }
 }
