@@ -4,13 +4,13 @@
 // return that count.
 
 fn main() {
+    //TODO: File I/O
     let input: Vec<Vec<i32>> = Vec::new();
     let output = aoc1_1(input);
     unimplemented!("{output}");
 }
 
 fn aoc1_1(elves: Vec<Vec<i32>>) -> i32 {
-    // TODO: Elf file I/O
     // TODO: Better elf data structure
     // TODO: Elf calculation
     let calorie_sums: Vec<i32> = elves.iter().map(|x| x.iter().sum()).collect();
