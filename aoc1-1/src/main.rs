@@ -4,24 +4,14 @@
 // return that count.
 
 fn main() {
-    let output = aoc1_1();
-    println!("{output}");
+    let input: Vec<Vec<i32>> = Vec::new();
+    let output = aoc1_1(input);
+    unimplemented!("{output}");
 }
 
-fn aoc1_1() -> i32 {
+fn aoc1_1(elves: Vec<Vec<i32>>) -> i32 {
     // TODO: Elf file I/O
     // TODO: Better elf data structure
-
-    let mut elves: Vec<Vec<i32>> = vec![];
-    #[allow(clippy::vec_init_then_push)]
-    {
-        elves.push(vec![1000, 2000, 3000]);
-        elves.push(vec![4000]);
-        elves.push(vec![5000, 6000]);
-        elves.push(vec![7000, 8000, 9000]);
-        elves.push(vec![10000]);
-    }
-
     // TODO: Elf calculation
     let calorie_sums: Vec<i32> = elves.iter().map(|x| x.iter().sum()).collect();
     return *calorie_sums.iter().max().unwrap();
@@ -32,7 +22,16 @@ mod tests {
     use super::*;
 
     #[test]
-    fn answer() {
-        assert_eq!(aoc1_1(), 24000);
+    fn example_answer() {
+        let mut elves: Vec<Vec<i32>> = vec![];
+        #[allow(clippy::vec_init_then_push)]
+        {
+            elves.push(vec![1000, 2000, 3000]);
+            elves.push(vec![4000]);
+            elves.push(vec![5000, 6000]);
+            elves.push(vec![7000, 8000, 9000]);
+            elves.push(vec![10000]);
+        }
+        assert_eq!(aoc1_1(elves), 24000);
     }
 }
